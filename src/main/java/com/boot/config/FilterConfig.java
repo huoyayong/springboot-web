@@ -16,7 +16,7 @@ public class FilterConfig {
         registration.addUrlPatterns("/*");
         registration.setName("costFilter");
         registration.addInitParameter("name","init");
-        registration.setOrder(FilterRegistrationBean.HIGHEST_PRECEDENCE);
+        registration.setOrder(2);
         return registration;
     }
 
@@ -26,7 +26,7 @@ public class FilterConfig {
         registration.setFilter(new RegisterFilter());
         registration.addUrlPatterns("/*");
         registration.setName("registerFilter");
-        registration.setOrder(FilterRegistrationBean.LOWEST_PRECEDENCE);
+        registration.setOrder(1);
         return registration;
     }
 }

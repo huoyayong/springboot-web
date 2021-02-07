@@ -9,12 +9,12 @@ import java.io.IOException;
 public class CostFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        log.info("name:{}",filterConfig.getInitParameter("name"));
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         long start = System.currentTimeMillis();
-        filterChain.doFilter(servletRequest,servletResponse);
         log.info("cost time:{}",System.currentTimeMillis()-start);
         filterChain.doFilter(servletRequest, servletResponse);
     }
