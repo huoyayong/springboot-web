@@ -10,20 +10,23 @@ import org.springframework.context.annotation.Configuration;
 public class FilterConfig {
 
     @Bean
-    public FilterRegistrationBean<CostFilter> registerCostFilter() {
+    public FilterRegistrationBean registerCostFilter() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new CostFilter());
-        registration.addUrlPatterns("/api/*");
-//        registration.setOrder(FilterRegistrationBean.LOWEST_PRECEDENCE -1);
+        registration.addUrlPatterns("/*");
+        registration.setName("costFilter");
+        registration.addInitParameter("name","init");
+        registration.setOrder(FilterRegistrationBean.HIGHEST_PRECEDENCE);
         return registration;
     }
 
     @Bean
-    public FilterRegistrationBean<RegisterFilter> registerRegisterFilter() {
+    public FilterRegistrationBean registerRegisterFilter() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new RegisterFilter());
-        registration.addUrlPatterns("/api/*");
-//        registration.setOrder(FilterRegistrationBean.LOWEST_PRECEDENCE);
+        registration.addUrlPatterns("/*");
+        registration.setName("registerFilter");
+        registration.setOrder(FilterRegistrationBean.LOWEST_PRECEDENCE);
         return registration;
     }
 }

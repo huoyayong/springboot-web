@@ -9,7 +9,6 @@ import java.io.IOException;
 public class CostFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        log.info("start logFilter......{}",filterConfig);
     }
 
     @Override
