@@ -13,7 +13,7 @@ public class FilterConfig {
     public FilterRegistrationBean registerCostFilter() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new CostFilter());
-        registration.addUrlPatterns("/*");
+        registration.addUrlPatterns("/api/*");
         registration.setName("costFilter");
         registration.addInitParameter("name","init");
         registration.setOrder(2);
@@ -24,7 +24,7 @@ public class FilterConfig {
     public FilterRegistrationBean registerRegisterFilter() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new RegisterFilter());
-        registration.addUrlPatterns("/*");
+        registration.addUrlPatterns("/api/*");
         registration.setName("registerFilter");
         registration.setOrder(1);
         return registration;
