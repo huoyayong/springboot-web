@@ -6,6 +6,8 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Date;
+
 @Configuration
 public class FilterConfig {
 
@@ -15,7 +17,7 @@ public class FilterConfig {
         registration.setFilter(new CostFilter());
         registration.addUrlPatterns("/api/*");
         registration.setName("costFilter");
-        registration.addInitParameter("name","init");
+        registration.addInitParameter("nowDate",String.valueOf(new Date()));
         registration.setOrder(2);
         return registration;
     }

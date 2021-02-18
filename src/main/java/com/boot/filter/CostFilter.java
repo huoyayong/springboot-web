@@ -9,7 +9,7 @@ import java.io.IOException;
 public class CostFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        log.info("name:{}",filterConfig.getInitParameter("name"));
+        log.info("nowDate:{}",filterConfig.getInitParameter("nowDate"));
     }
 
     @Override
